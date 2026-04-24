@@ -2,6 +2,8 @@
 
 FreshScan AI is a React + Vite web app that helps users identify whether a fruit or vegetable is fresh or rotten using a Google Teachable Machine image model.
 
+![FreshScan AI app preview](docs/app-preview.svg)
+
 Users can:
 - scan produce with a live webcam
 - upload an image for prediction
@@ -61,6 +63,10 @@ npm test
 3. TensorFlow.js runs inference in the browser.
 4. The app summarizes the prediction as fresh or rotten and stores recent results in local history.
 
+## Setup Flow
+
+![FreshScan AI setup flow](docs/setup-flow.svg)
+
 ## Project Structure
 
 ```text
@@ -91,6 +97,8 @@ In your GitHub repository:
 3. Set `Source` to `GitHub Actions`
 
 After that, every push to `main` will trigger a fresh deployment.
+
+If the first deployment fails on the `Configure Pages` step, it usually means GitHub Pages has not been enabled yet for the repository. Enabling `GitHub Actions` as the Pages source fixes that.
 
 ## Notes
 

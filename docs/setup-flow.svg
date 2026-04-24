@@ -1,0 +1,42 @@
+<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="420" rx="32" fill="#F7F6ED"/>
+  <rect x="44" y="68" width="250" height="284" rx="30" fill="#FFFFFF"/>
+  <rect x="322" y="68" width="250" height="284" rx="30" fill="#FFFFFF"/>
+  <rect x="600" y="68" width="250" height="284" rx="30" fill="#FFFFFF"/>
+  <rect x="878" y="68" width="358" height="284" rx="30" fill="#123524"/>
+  <circle cx="102" cy="112" r="24" fill="#E5F6D8"/>
+  <circle cx="380" cy="112" r="24" fill="#E5F6D8"/>
+  <circle cx="658" cy="112" r="24" fill="#E5F6D8"/>
+  <circle cx="936" cy="112" r="24" fill="#E4B449"/>
+  <text x="94" y="120" fill="#1F8A4D" font-family="Arial, sans-serif" font-size="22" font-weight="700">1</text>
+  <text x="372" y="120" fill="#1F8A4D" font-family="Arial, sans-serif" font-size="22" font-weight="700">2</text>
+  <text x="650" y="120" fill="#1F8A4D" font-family="Arial, sans-serif" font-size="22" font-weight="700">3</text>
+  <text x="928" y="120" fill="#123524" font-family="Arial, sans-serif" font-size="22" font-weight="700">4</text>
+  <text x="84" y="164" fill="#123524" font-family="Arial, sans-serif" font-size="28" font-weight="700">Install</text>
+  <text x="84" y="198" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">Run npm install with</text>
+  <text x="84" y="224" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">legacy peer deps for</text>
+  <text x="84" y="250" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">TensorFlow compatibility.</text>
+  <rect x="84" y="282" width="170" height="34" rx="17" fill="#EEF5E8"/>
+  <text x="101" y="304" fill="#1F8A4D" font-family="Courier New, monospace" font-size="14">npm install --legacy-peer-deps</text>
+  <text x="362" y="164" fill="#123524" font-family="Arial, sans-serif" font-size="28" font-weight="700">Train</text>
+  <text x="362" y="198" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">Create a Teachable</text>
+  <text x="362" y="224" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">Machine image model</text>
+  <text x="362" y="250" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">for fresh vs rotten labels.</text>
+  <rect x="362" y="282" width="118" height="34" rx="17" fill="#EEF5E8"/>
+  <text x="380" y="304" fill="#1F8A4D" font-family="Arial, sans-serif" font-size="14" font-weight="700">Model URL</text>
+  <text x="640" y="164" fill="#123524" font-family="Arial, sans-serif" font-size="28" font-weight="700">Connect</text>
+  <text x="640" y="198" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">Paste the exported</text>
+  <text x="640" y="224" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">model URL into the app</text>
+  <text x="640" y="250" fill="#6E7B68" font-family="Arial, sans-serif" font-size="18">and start scanning.</text>
+  <rect x="640" y="282" width="108" height="34" rx="17" fill="#EEF5E8"/>
+  <text x="664" y="304" fill="#1F8A4D" font-family="Arial, sans-serif" font-size="14" font-weight="700">Live Scan</text>
+  <text x="918" y="164" fill="#F6F7EC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Deploy</text>
+  <text x="918" y="198" fill="#C6D2C1" font-family="Arial, sans-serif" font-size="18">Push to main and let</text>
+  <text x="918" y="224" fill="#C6D2C1" font-family="Arial, sans-serif" font-size="18">GitHub Actions publish</text>
+  <text x="918" y="250" fill="#C6D2C1" font-family="Arial, sans-serif" font-size="18">the site to GitHub Pages.</text>
+  <rect x="918" y="282" width="158" height="34" rx="17" fill="#1F8A4D"/>
+  <text x="944" y="304" fill="#F6F7EC" font-family="Arial, sans-serif" font-size="14" font-weight="700">GitHub Pages</text>
+  <path d="M294 210H322" stroke="#89A182" stroke-width="8" stroke-linecap="round"/>
+  <path d="M572 210H600" stroke="#89A182" stroke-width="8" stroke-linecap="round"/>
+  <path d="M850 210H878" stroke="#89A182" stroke-width="8" stroke-linecap="round"/>
+</svg>

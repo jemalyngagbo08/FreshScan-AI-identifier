@@ -1,11 +1,10 @@
 import { useRef, useState } from "react";
 import { Upload, Loader2, ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import * as tmImage from "@teachablemachine/image";
-import type { Prediction } from "@/hooks/useTeachableMachine";
+import type { Prediction, TeachableMachineModel } from "@/hooks/useTeachableMachine";
 
 interface Props {
-  model: tmImage.CustomMobileNet | null;
+  model: TeachableMachineModel | null;
   onPredictions: (preds: Prediction[], imgDataUrl: string) => void;
 }
 

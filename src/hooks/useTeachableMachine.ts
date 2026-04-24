@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import * as tmImage from "@teachablemachine/image";
 
 export type Prediction = { className: string; probability: number };
+export type TeachableMachineModel = {
+  predict: (input: HTMLVideoElement | HTMLImageElement) => Promise<Prediction[]>;
+};
 
 export function useTeachableMachine(modelUrl: string | null) {
-  const [model, setModel] = useState<tmImage.CustomMobileNet | null>(null);
+  const [model, setModel] = useState<TeachableMachineModel | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const cancelled = useRef(false);
@@ -20,6 +22,7 @@ export function useTeachableMachine(modelUrl: string | null) {
     const base = modelUrl.endsWith("/") ? modelUrl : modelUrl + "/";
     (async () => {
       try {
+        const tmImage = await import("@teachablemachine/image");
         const m = await tmImage.load(base + "model.json", base + "metadata.json");
         if (!cancelled.current) setModel(m);
       } catch (e) {
