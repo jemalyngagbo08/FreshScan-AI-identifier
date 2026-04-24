@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 60 33% 97%;
+    --foreground: 150 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 142 65% 32%;
+    --primary-foreground: 60 33% 97%;
+    --primary-glow: 142 70% 45%;
+
+    --secondary: 35 85% 92%;
+    --secondary-foreground: 150 30% 12%;
+
+    --muted: 60 20% 92%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 35 95% 60%;
+    --accent-foreground: 150 30% 12%;
+
+    --fresh: 142 70% 40%;
+    --fresh-foreground: 0 0% 100%;
+    --fresh-glow: 142 80% 55%;
+
+    --rotten: 15 80% 50%;
+    --rotten-foreground: 0 0% 100%;
+    --rotten-glow: 15 90% 60%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 60 15% 88%;
+    --input: 60 15% 88%;
+    --ring: 142 65% 32%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(142 65% 32%) 0%, hsl(142 70% 45%) 50%, hsl(35 95% 60%) 100%);
+    --gradient-fresh: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 80% 55%));
+    --gradient-rotten: linear-gradient(135deg, hsl(15 80% 50%), hsl(25 90% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(60 30% 98%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(150 30% 12% / 0.08);
+    --shadow-glow: 0 10px 40px -10px hsl(142 70% 45% / 0.4);
+    --shadow-fresh: 0 8px 30px -8px hsl(142 80% 55% / 0.5);
+    --shadow-rotten: 0 8px 30px -8px hsl(15 90% 60% / 0.5);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 60 33% 97%;
+    --card: 150 25% 11%;
+    --card-foreground: 60 33% 97%;
+    --popover: 150 25% 11%;
+    --popover-foreground: 60 33% 97%;
+    --primary: 142 70% 50%;
+    --primary-foreground: 150 25% 8%;
+    --secondary: 150 20% 16%;
+    --secondary-foreground: 60 33% 97%;
+    --muted: 150 20% 16%;
+    --muted-foreground: 60 10% 65%;
+    --accent: 35 95% 60%;
+    --accent-foreground: 150 25% 8%;
+    --border: 150 20% 18%;
+    --input: 150 20% 18%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background-image: radial-gradient(circle at 10% 0%, hsl(142 70% 45% / 0.08), transparent 40%),
+                      radial-gradient(circle at 90% 100%, hsl(35 95% 60% / 0.08), transparent 40%);
+    background-attachment: fixed;
+  }
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .scanner-line {
+    background: linear-gradient(180deg, transparent, hsl(var(--primary-glow) / 0.8), transparent);
+  }
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.7);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
