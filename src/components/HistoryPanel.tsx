@@ -6,7 +6,7 @@ export type HistoryEntry = {
   id: string;
   timestamp: number;
   label: string;
-  status: "fresh" | "rotten" | "unknown";
+  status: "fresh" | "rotten" | "unknown" | "invalid";
   confidence: number;
   thumbnail?: string;
 };

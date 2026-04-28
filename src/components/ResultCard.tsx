@@ -19,6 +19,11 @@ const TIPS = {
     "Center the item inside the scan area.",
     "Make sure your trained model covers this item.",
   ],
+  invalid: [
+    "Invalid object detected. Please scan fruits and vegetables only.",
+    "Remove non-produce items from the frame before scanning.",
+    "Try again with one fruit or vegetable centered in view.",
+  ],
 };
 
 export const ResultCard = ({ predictions }: { predictions: Prediction[] }) => {
@@ -58,6 +63,13 @@ export const ResultCard = ({ predictions }: { predictions: Prediction[] }) => {
       label: "UNCERTAIN",
       ring: "ring-border",
     },
+    invalid: {
+      gradient: "bg-destructive",
+      shadow: "shadow-soft",
+      icon: AlertTriangle,
+      label: "INVALID OBJECT",
+      ring: "ring-destructive/40",
+    },
   }[result.status];
 
   const Icon = config.icon;
@@ -73,7 +85,9 @@ export const ResultCard = ({ predictions }: { predictions: Prediction[] }) => {
           <div className="flex-1 min-w-0">
             <p className="text-xs font-mono uppercase tracking-widest opacity-80">Status</p>
             <h3 className="text-3xl font-bold leading-tight">{config.label}</h3>
-            <p className="text-sm opacity-90 mt-1 truncate capitalize">{result.label}</p>
+            <p className="text-sm opacity-90 mt-1 truncate capitalize">
+              {result.status === "invalid" ? "Fruits and vegetables only" : result.label}
+            </p>
           </div>
           <div className="text-right">
             <p className="text-xs font-mono uppercase tracking-widest opacity-80">Confidence</p>

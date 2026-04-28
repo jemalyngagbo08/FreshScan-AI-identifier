@@ -7,9 +7,14 @@ import { ImageUploader } from "@/components/ImageUploader";
 import { ResultCard } from "@/components/ResultCard";
 import { HistoryPanel, type HistoryEntry } from "@/components/HistoryPanel";
 import { ModelSettings } from "@/components/ModelSettings";
+import { toast } from "@/components/ui/sonner";
 
 const STORAGE_KEY = "tm_model_url";
 const HISTORY_KEY = "freshscan_history";
+const INVALID_SCAN_MESSAGE = "Invalid object detected. Please scan fruits and vegetables only.";
+
+const formatScanDescription = (label: string, confidence: number) =>
+  `${label} detected with ${Math.round(confidence * 100)}% confidence.`;
 
 const Index = () => {
   const [modelUrl, setModelUrl] = useState<string | null>(() => localStorage.getItem(STORAGE_KEY));
@@ -41,13 +46,27 @@ const Index = () => {
     const now = Date.now();
     if (sig === lastSig.sig && now - lastSig.t < 4000) return;
     lastSig.sig = sig; lastSig.t = now;
+    if (!r.isValidProduce) {
+      toast.error(INVALID_SCAN_MESSAGE);
+      return;
+    }
     setHistory((h) => [{ id: crypto.randomUUID(), timestamp: now, label: r.label, status: r.status, confidence: r.confidence }, ...h].slice(0, 50));
+    toast.success("Image successfully scanned", {
+      description: formatScanDescription(r.label, r.confidence),
+    });
   }, [lastSig]);
 
   const handleUploadPredictions = useCallback((preds: Prediction[], thumb: string) => {
     setPredictions(preds);
     const r = classifyResult(preds);
+    if (!r.isValidProduce) {
+      toast.error(INVALID_SCAN_MESSAGE);
+      return;
+    }
     setHistory((h) => [{ id: crypto.randomUUID(), timestamp: Date.now(), label: r.label, status: r.status, confidence: r.confidence, thumbnail: thumb }, ...h].slice(0, 50));
+    toast.success("Image successfully scanned", {
+      description: formatScanDescription(r.label, r.confidence),
+    });
   }, []);
 
   return (
